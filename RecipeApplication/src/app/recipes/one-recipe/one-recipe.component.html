@@ -1,0 +1,13 @@
+<section class="grid grid-cols-1 p-2 gap-4 mb-6">
+<article class="p-6 my-6">
+    <h2 class="text-3xl font-bold text-center mb-6 text-amber-500">{{recipe.label}}</h2>
+    <img class="w-full md:w-1/2 border-solid bg-white border-neutral-500 py-6 px-4 mx-auto rounded-lg shadow-xl place-self-center" src= "{{recipe.image}}" alt="{{recipe.label}}">
+    <p class="text-xl font-bold text-center my-6 text-neutral-500">Ingredients:</p>
+    <ul class="flex flex-col justify-center mx-auto max-w-md space-y-1 text-neutral-500 list-disc list-inside">
+      <li *ngFor="let ingredient of recipe.ingredientLines">
+        {{ingredient}}
+      </li>
+    </ul>
+  </article>
+</section>
+

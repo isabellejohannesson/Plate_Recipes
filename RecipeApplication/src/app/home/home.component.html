@@ -1,0 +1,122 @@
+
+
+  <!--HERO SECTION-->
+<section class="flex flex-col sm:flex-row sm:flex-wrap p-6 justify-center items-center gap-8 mb-12"> 
+  <article class="sm:w-1/2">
+    <h1 class="max-w-md text-4xl sm:text-5xl sm:text-left text-amber-500 font-bold text-center my-6">What do you want to eat today?</h1> 
+
+  <!----------------------Searchbar---------------------------->
+
+    <input class="mb-6 p-4 border-solid border-2 rounded-full w-full border-amber-300" type="text" placeholder="Type goodies here..." [(ngModel)]="searchquery">
+    
+    <div class="flex flex-row-reverse justify-between max-w-md">
+      <button class="justify-self-end bg-neutral-500 hover:opacity-50 text-white font-semibold py-2 px-4 rounded-full" type="button" (click)="getRecipe()">Get recipe</button>
+      <button class="justify-self-start text-md font-semibold text-neutral-500 hover:opacity-50 hover:text-rose-500" type="button" (click)="refresh()">Clear search</button><br>
+    </div>
+  </article>
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4 mb-6">
+<article *ngFor="let recipe of allRecipes" class="p-6">
+  <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+  <img class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl" [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+<!----------------------Filter buttons----------------------->
+<h2 *ngIf="checkIfLoggedIn === true" class="max-w-1/2 text-xl sm:text-2xl text-amber-500 font-bold text-center">In a hurry? Try a filter!</h2>
+<section *ngIf="checkIfLoggedIn === true" class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4 mb-6">
+
+
+    <button type="button" class="h-8 px-2 m-2 text-sm font-medium text-rose-100 bg-rose-500 rounded-lg focus:shadow-outline hover:bg-rose-800" *ngIf="checkIfLoggedIn === true" type="button" (click)="getBreakfast()">
+      Breakfast
+    </button>
+    <button type="button" class="h-8 px-4 m-2 text-sm font-medium text-rose-100 bg-rose-500 rounded-lg focus:shadow-outline hover:bg-rose-800" *ngIf="checkIfLoggedIn === true" type="button" (click)="getLunch()">
+      Lunch
+    </button>
+    <button type="button" class="h-8 px-4 m-2 text-sm font-medium text-rose-100 bg-rose-500 rounded-lg focus:shadow-outline hover:bg-rose-800" *ngIf="checkIfLoggedIn === true" type="button" (click)="getDinner()">
+      Dinner
+    </button>
+    <button type="button" class="h-8 px-4 m-2 text-sm font-medium text-rose-100 bg-rose-500 rounded-lg focus:shadow-outline hover:bg-rose-800" *ngIf="checkIfLoggedIn === true" type="button" (click)="getStarter()">
+      Starter
+    </button>
+    <button type="button" class="h-8 px-4 m-2 text-sm font-medium text-rose-100 bg-rose-500 rounded-lg focus:shadow-outline hover:bg-rose-800" *ngIf="checkIfLoggedIn === true" type="button" (click)="getMainCourse()">
+      Main course
+    </button>
+    <button type="button" class="h-8 px-4 m-2 text-sm font-medium text-rose-100 bg-rose-500 rounded-lg focus:shadow-outline hover:bg-rose-800" *ngIf="checkIfLoggedIn === true" type="button" (click)="getDessert()">
+      Dessert
+    </button>
+
+  </section>
+
+<!-----------Filters for buttons------------->
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+<article *ngFor="let recipe of breakfast" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label| slice:0:12 }}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+<article *ngFor="let recipe of dinner" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label| slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+<article *ngFor="let recipe of lunch" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+<article *ngFor="let recipe of starter" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+<article *ngFor="let recipe of mainCourse" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+<article *ngFor="let recipe of dessert" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-2 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12 }}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
+</section>
+
+<!-----------Filters for starting view------------->
+
+  <h2 class="text-3xl font-bold text-center my-4 text-amber-500">Make a scene with the green</h2>
+    <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+      <article *ngFor="let recipe of $any(vegetarian | slice:0:6)" class="p-6">
+        <h3 class="hover:opacity-50 text-lg font-bold text-center mb-4 text-neutral-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h3>
+        <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+    </article>
+  </section>
+
+  <hr class="mx-auto w-1/2 bg-neutral-500 mb-4">
+  
+    <h2 class="text-3xl font-bold text-center my-4 text-amber-500">They say life is bread</h2>
+    <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+      <article *ngFor="let recipe of $any(bread | slice:0:6)" class="p-6">
+        <h3 class="hover:opacity-50 text-lg font-bold text-center mb-4 text-neutral-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h3>
+        <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+    </article>
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-neutral-500 mb-4">
+  
+      <h2 class="text-3xl font-bold text-center my-4 text-amber-500">Sunday, lazy sunday</h2>
+      <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
+        <article *ngFor="let recipe of $any(sunday | slice:0:6)" class="p-6">
+            <h3 class="hover:opacity-50 text-lg font-bold text-center mb-4 text-neutral-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12 }}</a></h3>
+          <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+      </article>
+      </section>

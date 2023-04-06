@@ -1,0 +1,19 @@
+<section class="p-6 my-6 scroll-mt-16 max-w-4xl">
+  <h1 class="text-4xl sm:text-5xl text-amber-500 font-bold text-center pb-4">{{ title }}</h1>
+  <form action="post" class= "w-full md:w-1/2 mx-auto text-xl md:text-md flex flex-col items-left gap-4">
+      <div class="registerContainer">
+        <label for="name" class="font-semibold text-neutral-500">Name:</label>
+        <input [(ngModel)]="user.name" type="text" placeholder="enter name" name="name" id="name" required class="border-solid border-2 border-amber-500 rounded-xl w-full p-3 mb-4 mt-2">
+    
+        <label for="email" class="font-semibold text-neutral-500">Email:</label>
+        <input [(ngModel)]="user.email" type="text" placeholder="enter email" name="email" id="email" required class="border-solid border-2 border-amber-500 rounded-xl w-full p-3 mb-4 mt-2">
+    
+        <label for="password" class="font-semibold text-neutral-500">Password:</label>
+        <input [(ngModel)]="user.password" type="password" placeholder="choose a password" name="password" id="password" class="border-solid border-2 border-amber-500 rounded-xl w-full p-3 mb-4 mt-2">
+    
+        <label for="password-repeat" class="font-semibold text-neutral-500">Repeat password:</label>
+        <input [(ngModel)]="user.password_confirmation" type="password" placeholder="repeat password" name="password-repeat" id="password-repeat" class="border-solid border-2 border-amber-500 rounded-xl w-full p-3 mb-4 mt-2">
+      </div>
+      <button type="submit" class="self-end bg-neutral-500 hover:opacity-80 text-white font-semibold p-3 rounded-full w-48" type="button" (click)="register()">Register</button>
+    </form>
+</section>
