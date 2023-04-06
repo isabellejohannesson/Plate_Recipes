@@ -31,7 +31,6 @@ export class UserService {
       localStorage.setItem("name", res.user.name);
       this.name = localStorage.getItem('name');
       window.location.reload();
-      
     })
   }
 
