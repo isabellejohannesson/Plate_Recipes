@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  configUrl = "http://127.0.0.1:8000/api/";
+  configUrl = "https://platerecipes-production.up.railway.app/api/";
   name: any = '';
 
   httpOptions = {
