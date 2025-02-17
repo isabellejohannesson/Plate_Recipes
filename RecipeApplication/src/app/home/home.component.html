@@ -50,69 +50,55 @@
 
 <!-----------Filters for buttons------------->
 <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-  <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label| slice:0:12 }}
-    <article *ngFor="let recipe of breakfast" class="p-6">
-      <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"></h2>
-      <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-    </article>
-  </a>
+<article *ngFor="let recipe of breakfast" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label| slice:0:12 }}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
 </section>
 
 <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-  <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label| slice:0:12}}
-    <article *ngFor="let recipe of dinner" class="p-6">
-      <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"></h2>
-      <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-    </article>
-  </a>
+<article *ngFor="let recipe of dinner" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label| slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
 </section>
 
 <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-  <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}
-    <article *ngFor="let recipe of lunch" class="p-6">
-      <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"></h2>
-      <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-    </article>
-  </a>
+<article *ngFor="let recipe of lunch" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
 </section>
 
 <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-  <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}
-    <article *ngFor="let recipe of starter" class="p-6">
-      <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"></h2>
-      <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-    </article>
-  </a>
+<article *ngFor="let recipe of starter" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
 </section>
 
 <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-  <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}
-    <article *ngFor="let recipe of mainCourse" class="p-6">
-      <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"></h2>
-      <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-    </article>
-  </a>
+<article *ngFor="let recipe of mainCourse" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-6 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
 </section>
 
 <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-  <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12 }}
-    <article *ngFor="let recipe of dessert" class="p-6">
-      <h2 class="hover:opacity-50 text-xl font-bold text-center mb-2 text-amber-500"></h2>
-      <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-    </article>
-  </a>
+<article *ngFor="let recipe of dessert" class="p-6">
+ <h2 class="hover:opacity-50 text-xl font-bold text-center mb-2 text-amber-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12 }}</a></h2>
+ <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
+</article>
 </section>
 
 <!-----------Filters for starting view------------->
 
   <h2 class="text-3xl font-bold text-center my-4 text-amber-500">Make a scene with the green</h2>
-  <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
-    <a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}
+    <section class="grid grid-cols-2 md:grid-cols-3 p-2 gap-4">
       <article *ngFor="let recipe of $any(vegetarian | slice:0:6)" class="p-6">
-        <h3 class="hover:opacity-50 text-lg font-bold text-center mb-4 text-neutral-500"></h3>
+        <h3 class="hover:opacity-50 text-lg font-bold text-center mb-4 text-neutral-500"><a [routerLink]="['/one-recipe/', recipe.idref]" routerLinkActive="active" >{{recipe.label | slice:0:12}}</a></h3>
         <img [src]="recipe.image" [alt]="recipe.label" class="border-solid bg-white border-neutral-500 py-2 px-2 rounded-lg shadow-xl">
-      </article>
-    </a>
+    </article>
   </section>
 
   <hr class="mx-auto w-1/2 bg-neutral-500 mb-4">
