@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit{
       this.vegetarian = vegetarian;
   });
 
-    this.recipeService.getBread().subscribe(result => {
+   /*  this.recipeService.getBread().subscribe(result => {
       let bread = result.hits.map((data: any) =>  {
         let recipe = data.recipe;
         recipe.idref = data._links.self.href.slice(38, 70);
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit{
     })
     this.sunday = sunday;
   });
-
+ */
 }
 
 
